@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Author SerhiiLazebnyi
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Serj\AdminAutoLogin\Api\AutoLoginInterface"
+                type="Serj\AdminAutoLogin\Model\AutoLogin" />
+    <preference for="Serj\AdminAutoLogin\Api\ConfigInterface"
+                type="Serj\AdminAutoLogin\Model\Config" />
+    <type name="Magento\Backend\Controller\Adminhtml\Auth\Login">
+        <plugin name="process_auto_login"
+                type="Serj\AdminAutoLogin\Plugin\Magento\Backend\Controller\Adminhtml\Index\ProcessAutoLogin" />
+    </type>
+</config>

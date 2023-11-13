@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Author SerhiiLazebnyi
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="admin">
+            <group id="auto_login" translate="label" type="text" sortOrder="9999" showInDefault="1">
+                <label>Admin Auto Login</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" canRestore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="user" translate="label" type="select" sortOrder="20" showInDefault="1">
+                    <label>Login As</label>
+                    <source_model>Serj\AdminAutoLogin\Model\Config\Source\Users</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
